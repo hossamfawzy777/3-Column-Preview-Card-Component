@@ -1,0 +1,124 @@
+@font-face {
+    font-family: "Lexend Deca";
+    src: url("fonts/LexendDeca-VariableFont_wght.ttf");
+}
+@font-face {
+    font-family: "Big Shoulders Display";
+    src: url("fonts/BigShouldersDisplay-VariableFont_wght.ttf");
+}
+:root {
+    --bright-orange: hsl(31, 77%, 52%);
+    --dark-cyan: hsl(184, 100%, 22%);
+    --very-dark-cyan: hsl(179, 100%, 13%);
+    --transparent-white_paragraphs: hsla(0, 0%, 100%, 0.75);
+    --very-light-gray_background_headings_buttons: hsl(0, 0%, 95%);
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--very-light-gray_background_headings_buttons);
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 400;
+}
+div.parent-card {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+}
+div.child-card {
+    width: 310px;
+    padding: 45px;
+}
+div.child-card:nth-child(1) {
+    background-color: var(--bright-orange);
+}
+div.child-card:nth-child(2) {
+    background-color: var(--dark-cyan);
+}
+div.child-card:nth-child(3) {
+    background-color: var(--very-dark-cyan);
+}
+h1 {
+    color: var(--very-light-gray_background_headings_buttons);
+    font-family: "Big Shoulders Display", sans-serif;
+    font-size: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    /* font-stretch: 200%; */
+    /* font-weight: 400; */
+    font-variation-settings: "wdth" 200, "wght" 400;
+}
+p {
+    margin-bottom: 90px;
+    color: var(--transparent-white_paragraphs);
+    line-height: 1.7;
+    letter-spacing: 0.8px;
+    font-size: 14px;
+}
+div.button {
+    font-size: 15px;
+    background-color: var(--very-light-gray_background_headings_buttons);
+    width: 150px;
+    height: 50px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+div.child-card:nth-child(1) > div.button {
+    color: var(--bright-orange);
+}
+div.child-card:nth-child(2) > div.button {
+    color: var(--dark-cyan);
+}
+div.child-card:nth-child(3) > div.button {
+    color: var(--very-dark-cyan);
+}
+div.button:hover {
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--very-light-gray_background_headings_buttons) !important;
+    border: 2px solid var(--very-light-gray_background_headings_buttons);
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    div.parent-card {
+        flex-direction: column;
+        position: static;
+        transform: translate(0, 0);
+        margin: 50px auto;
+        width: 310px;
+    }
+    p {
+        margin-bottom: 40px;
+    }
+    
+    .attribution {
+        position: static;
+        transform: translateX(0);
+        margin: 10px auto;
+        font-size: 10px;
+    }
+}
